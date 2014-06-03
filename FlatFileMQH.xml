@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<extension xmlns="https://newrelic.com/docs/java/xsd/v1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="newrelic-extension extension.xsd " name="FlatFileMessageQueueHandler"
+	version="1.0" enabled="true">
+	<instrumentation metricPrefix="SIS">
+		<pointcut transactionStartPoint="false" ignoreTransaction="false"
+		excludeFromTransactionTrace="false"
+		metricNameFormat="FFMQH" transactionType="web">
+			<className>blackboard.dataintegration.flatfile.queue.FlatFileMessageQueueHandler</className>
+			<method>
+				<name>onMessage</name>
+			</method>
+			<method>
+				<name>enqueueProcessingRequest</name>
+			</method>
+			<method>
+				<name>newTempFile</name>
+			</method>
+		</pointcut>
+	</instrumentation>
+</extension>
+
+
