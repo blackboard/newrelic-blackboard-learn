@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<extension xmlns="https://newrelic.com/docs/java/xsd/v1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://docs.newrelic.com/docs/java/xsd/v1.0 extension.xsd"
+	name="MessageQueueHandler"
+	version="1.0" enabled="true">
+	<instrumentation metricPrefix="ActiveMQ">
+		<pointcut transactionStartPoint="true" ignoreTransaction="false"
+		excludeFromTransactionTrace="false" transactionType="background">
+			<interfaceName>blackboard.platform.messagequeue.MessageQueueHandler</interfaceName>
+			<method>
+				<name>onMessage</name>
+			</method>
+		</pointcut>
+	</instrumentation>
+</extension>
