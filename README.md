@@ -7,3 +7,6 @@ To install New Relic Java application agent in Blackboard Learn v.201404 and abo
 2. Modify 'bb-config.properties' file to include '-javaagent:/usr/local/blackboard/apps/newrelic/newrelic.jar' on 'bbconfig.jvm.options.extra.tomcat'
 3. Copy the "extensions" folder from this repo into the "newrelic" folder and change the owner of the directory to bbuser
 4. Run PushConfigUpdates for the configuration change to take effect
+
+For viewing JMX metrics, refer to New Relic's instructions:
+https://docs.newrelic.com/docs/agents/java-agent/custom-instrumentation/custom-jmx-instrumentation-yaml#display_metrics
