@@ -1,0 +1,9 @@
+name: Ehcache
+version: 1.0
+enabled: true
+jmx:
+  - object_name: net.sf.ehcache:type=CacheStatistics,CacheManager=CacheEhImpl,name=*
+    metrics:
+      - attributes: CacheHits, CacheMisses, ObjectCount
+        type: simple
+
