@@ -1,9 +1,12 @@
 name: Ehcache
-version: 1.0
+version: 1.1
 enabled: true
 jmx:
   - object_name: net.sf.ehcache:type=CacheStatistics,CacheManager=CacheEhImpl,name=*
     metrics:
       - attributes: CacheHits, CacheMisses, ObjectCount
         type: simple
-
+  - object_name: org.apache.activemq:Type=Topic,BrokerName=messageQueueService,Destination=ehcache
+    metrics:
+      - attributes: AverageEnqueueTime, BlockedProducerWarningInterval, ConsumerCount, DequeueCount, DispatchCount, EnqueueCount, ExpiredCount, InFlightCount, MaxEnqueueTime, QueueSize, ExpiredCount, ProducerCount
+        type: simple
