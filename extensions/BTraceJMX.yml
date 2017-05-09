@@ -2,7 +2,7 @@ name: PoolTracker
 version: 1.0
 enabled: true
 jmx:
-  - object_name: btrace:name=blackboard.support.debug.btrace.OverheadPoolTracker
+  - object_name: btrace:name=blackboard.support.debug.btrace.CMSPoolTracker
     metrics:
       - attributes: cmsDocInUse, cmsDocMin, cmsDocMax, cmsDocFree, cmsDocWaiting, cmsFree, cmsInUse, cmsMin, cmsMax, cmsWaiting
         type: simple
